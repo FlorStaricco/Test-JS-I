@@ -76,7 +76,7 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código: 
-  if ((str1) == (str2))
+  if ((str1.length) == (str2.length))
 {return true;}
   else {return false}
 }
@@ -190,22 +190,21 @@ function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código:
-  let string1 = "Hello Word";
-  let string2= "!";
-  let agregarSimboloExclamacion = string1 + string2;
-  return agregarSimboloExclamacion;
+  return str + "!";
 }
 
 function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Cristian" -> "Soy Cristian"
   // Tu código:
-}
+  return "Soy " + nombre, apellido;
+} 
 
 function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Nahuel" -> "Hola Nahuel!"
   // Tu código:
+  return "Hola" + nombre + "!";
 }
 
 function deEuroAdolar(euro) {
@@ -219,16 +218,20 @@ function deEuroAdolar(euro) {
 function obtenerAreaRectangulo(alto, ancho) {
   // Retornar el area de un rectángulo teniendo su altura y ancho
   // Tu código:
+  return alto * ancho;
 }
 
 function retornarPerimetro(lado) {
   //Escibe una función a la cual reciba el valor del lado de un cuadrado y retorne su perímetro.
   //Escribe tu código aquí
+ return lado * 4;
 }
 
 function areaDelTriangulo(base, altura) {
   //Desarrolle una función que calcule el área de un triángulo.
   //Escribe tu código aquí
+  let areaDelTriangulo = (base * altura) / 2;
+  return areaDelTriangulo;
 }
 
 function esVocal(letra) {
@@ -236,6 +239,11 @@ function esVocal(letra) {
   //Verificar si el usuario ingresó un string de más de un carácter y, en ese caso, informarle 
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   //Escribe tu código aquí
+  let esVocal = letra;
+  if (letra == "a" || letra == "e" || letra =="i" || letra == "o" || letra == "u"){
+    return "Es vocal"
+  } else if (letra.length !== 1) {
+    return "Dato incorrecto"
 }
 
 // --------------------------------
