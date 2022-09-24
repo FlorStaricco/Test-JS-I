@@ -42,7 +42,7 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
-  return agregarItemAlComienzoDelArray.unshift ("elemento")
+  return array.unshift ("elemento");
 }
 
 function dePalabrasAFrase(palabras) {
@@ -51,7 +51,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  const palabras = [azul, blanco, violeta, amarillo];
+  
 return palabras.join(' ');
 }
 
@@ -67,18 +67,19 @@ function agregarNumeros(numeros) {
   // Suma todos los enteros y devuelve el valor
   // Tu código:
 
-  let sumaTotal = 0;
-
-  //  for (let index = 0; index < array.length; index++) {
-  //  sumaTotal = array[index];
+  
+  // let sumaTotal = 0;
+  //  for (let index = 0; index < numeros.length; index++) {
+  //  sumaTotal += array[index];
   //   }
   //  return sumaTotal;
-
-for (const elemento of numeros){
+  
+  let sumaTotal = 0;
+ for (const elemento of numeros){
   sumaTotal += elemento;
-}
- return sumaTotal;
-}
+ }
+  return sumaTotal;
+ }
 
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
@@ -115,11 +116,11 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí:
-if (numeroDeDia <= 5){
-  return "Es dia Laboral"
+if (numeroDeDia === 1 ||numeroDeDia ===7){
+  return "Es fin de semana"
 }
 else {
-  return "Es fin de semana"
+  return "Es dia Laboral"
 }
 } 
 
@@ -127,11 +128,10 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  if ((n <= 90) && (n >=99 )){
+  if (n.toString([0] ==="9")) {
     return true
-  } else {
-    return false
   }
+  else {return false}
 }
 
 function todosIguales(arreglo) {
@@ -139,11 +139,10 @@ function todosIguales(arreglo) {
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí:
 
-  if (arreglo.length == arreglo){
-    return true
+  for (let i = 0; i < array.length; i++) {
+    if (arreglo [i] === arreglo [i+1]) return true
   }
-  else {return false
-} 
+  return false
 }
 
 function mesesDelAño(array) {
@@ -151,7 +150,7 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  
+
 }
 
 function mayorACien(array) {
@@ -159,7 +158,7 @@ function mayorACien(array) {
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
   for (let index = 0; index < array.length; index++) {
-    const element = array[index] < 100;
+    const element = array[index] > 100;
   }
   return element;
 }

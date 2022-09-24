@@ -46,8 +46,8 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
-  delete objeto.unaPropiedad;
-  return objeto;
+  return delete objeto.unaPropiedad;
+  
 }
 
 function nuevoUsuario(nombre, email, password) {
@@ -76,7 +76,10 @@ function tienePropiedad(objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  return objeto.hasOwnProperty("propiedad");
+  if (objeto.key === objeto.hasOwnProperty("propiedad")) {
+    return true
+  }
+  else {return false}
 }
 
 function verificarPassword(usuario, password) {
@@ -84,11 +87,27 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
-  if ("password" == usuario.hasOwnProperty("password")){
+
+  if ( usuario.password === password) {
     return true;
-  }
-  else {return false;}
+} else {
+return false;
 }
+}
+
+  //        o
+
+// if (usuario.password === password) {
+//    return true;
+// }
+// return false;}
+
+
+ //         o
+
+// return usuario.password === password;}
+  
+
 
 function actualizarPassword(usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
@@ -104,7 +123,7 @@ function agregarAmigo(usuario, nuevoAmigo) {
   // Devuelve el objeto "usuario"
   // // Tu código:
   usuario.amigos.push ("nuevoAmigo");
-  return usuario
+  return usuario;
 }
 
 function pasarUsuarioAPremium(usuarios) {
@@ -114,14 +133,14 @@ function pasarUsuarioAPremium(usuarios) {
   // Devuelve el array de usuarios
   // Tu código:
 
-  // for (let index = 0; index < usuarios.length; index++) {
-  // usuarios[index].esPremium = true;
-  // }
-  
-  for (const usuario of usuarios){
-    usuario.esPremium = true;
-  }
-  return usuarios;
+    // for (let index = 0; index < usuarios.length; index++) {
+    // usuarios[index].esPremium = true;
+    // }
+
+    for (const usuario of usuarios) {
+      usuario.esPremium = true;
+    }
+    return usuarios;
 }
 
 function sumarLikesDeUsuario(usuario) {
@@ -131,12 +150,28 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
- let sumaTotal = 0;
- for (let index = 0; index < post.length; index++) {
-  sumaTotal = post[index];
- }
- return sumaTotal;
+  let suma = 0;
+
+  for (let index = 0; index < usuario.posts.length; index++) {
+      suma = suma + usuario.posts[index].likes
+  }
 }
+ let suma = sumarLikesDeUsuario (usuario)
+
+ ///    OTRA FORMULA 
+  // suma = 0
+  // for (const elemento of usuario.posts) {
+  //   suma = suma + elemento.likes
+  // }
+  // }
+  // let suma = sumarLikesDeUsuario (usuario)
+
+
+
+///    O FORMULA RESUMIDA
+
+// return usuario.posts.reduce( (total, elemento) => total += elemento.likes, 0  )
+// }
 
 function agregarMetodoCalculoDescuento(producto) {
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
@@ -149,16 +184,14 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
 
-  producto ={
-    precio: 20,
-    porcentajeDeDescuento: 0.5,
-    
-    calcularPrecioDescuento: function (){
-      return producto.precio - (producto.precio * producto.porcentajeDeDescuento);
-    }
-  }
-  return producto;
+  producto.calcularPrecioDescuento = function() {
+    return this.precio - (this.precio * this.porcentajeDeDescuento);
+ }
+
+ return producto;
 }
+
+
 
 // No modificar nada debajo de esta línea
 // --------------------------------

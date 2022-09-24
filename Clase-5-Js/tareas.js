@@ -7,13 +7,25 @@ function counter() {
   // ejemplo: const newCounter = counter();
   // newCounter(); // 1
   // newCounter(); // 2
-}
+
+
+  // ok hecho por profesor:
+  
+    let counter = 0;
+
+    return function (){
+      return counter ++;
+    };
+  }
+  let counter = counter
+
 
 function cacheFunction(cb) {
   // Usa closures para crear un caché para la función cb.
   // la función que retornas debe aceptar un solo argumento e invocar a cb con ese argumento
   // cuando la función que hayas retornado es invocada de nuevo, debería guardar el argumento y el resultado de la invocacion
-  // cuando la función que retornaste sea invocada de nuevo con un argumento con el cual se había invocado anterioremente, no deberia invocar de nuevo a cb
+  // cuando la función que retornaste sea invocada de nuevo con un argumento con el cual se había invocado anterioremente, no deberia invocar  
+  // de nuevo a cb
   // debería retornar el resultado (previamente guardado)
   // Ejemplo:
   // cb -> function(x) { return x * x; }
